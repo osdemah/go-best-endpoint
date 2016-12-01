@@ -1,0 +1,20 @@
+message Endpoint {
+    required string host = 1;
+    required uint32 port = 2;
+}
+
+message Period {
+    required uint64 period = 1;
+    enum PeriodType {
+        SECONDS = 1;
+        MINUTES = 2;
+        HOURS = 3;
+        DAYS = 4;
+    }
+    required PeriodType period_type = 2;
+}
+
+message EndpointsScanner {
+    required Period period = 1;
+    repeated Endpoint endpoints = 2;
+}
